@@ -23,7 +23,7 @@ const styles = StyleSheet.create({
     borderBottomWidth: 1,
     borderColor: '#ccc',
   },
-  name: { fontWeight: 'bold', fontSize: 16 },
+  name: { color: 'white', fontWeight: 'bold', fontSize: 16 },
   priority: { padding: 5, borderRadius: 5 },
   priorityAlta: { backgroundColor: 'red', color: 'white' },
   priorityMédia: { backgroundColor: 'orange', color: 'white' },

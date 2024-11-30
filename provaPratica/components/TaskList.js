@@ -13,14 +13,14 @@ const TaskList = ({ tasks, deleteTask, editTask }) => {
   });
 
   return (
-    <View>
+    <View style={{ flex: 1 }}>
       <Button
         title={`Ordenar: ${isDescending ? 'Maior para Menor' : 'Menor para Maior'}`}
         onPress={() => setIsDescending(!isDescending)}
       />
       <FlatList
         data={sortedTasks}
-        keyExtractor={(item) => item.id}
+        keyExtractor={(item) => item.id || item.name} 
         renderItem={({ item }) => (
           <TaskItem task={item} deleteTask={deleteTask} editTask={editTask} />
         )}

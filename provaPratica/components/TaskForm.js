@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { View, TextInput, Button, StyleSheet, Text } from 'react-native';
+import { View, TextInput, Button, StyleSheet, Text, ScrollView } from 'react-native';
 import { Picker } from '@react-native-picker/picker';
 
 const TaskForm = ({ addTask, editingTask }) => {
@@ -28,7 +28,7 @@ const TaskForm = ({ addTask, editingTask }) => {
   };
 
   return (
-    <View style={styles.form}>
+    <ScrollView contentContainerStyle={styles.form}>
       <TextInput
         style={styles.input}
         placeholder="Nome da tarefa"
@@ -48,13 +48,14 @@ const TaskForm = ({ addTask, editingTask }) => {
         <Picker.Item label="Baixa" value="Baixa" />
       </Picker>
       <Button title={editingTask ? 'Editar Tarefa' : 'Adicionar Tarefa'} onPress={handleSubmit} />
-    </View>
+    </ScrollView>
   );
 };
 
 const styles = StyleSheet.create({
   form: { marginBottom: 20 },
   input: {
+    color: 'white',
     borderWidth: 1,
     borderColor: '#ccc',
     borderRadius: 5,

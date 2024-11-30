@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
-import { StyleSheet, View, Text } from 'react-native';
-import TaskForm from './components/TaskForm';
-import TaskList from './components/TaskList';
+import { StyleSheet, View, Text, ScrollView } from 'react-native';
+import TaskForm from '../components/TaskForm';
+import TaskList from '../components/TaskList';
 
 export default function App() {
   const [tasks, setTasks] = useState([]);
@@ -27,11 +27,11 @@ export default function App() {
   };
 
   return (
-    <View style={styles.container}>
+    <ScrollView style={styles.container}> 
       <Text style={styles.title}>Gerenciador de Tarefas</Text>
       <TaskForm addTask={addTask} editingTask={editingTask} />
       <TaskList tasks={tasks} deleteTask={deleteTask} editTask={editTask} />
-    </View>
+    </ScrollView>
   );
 }
 
